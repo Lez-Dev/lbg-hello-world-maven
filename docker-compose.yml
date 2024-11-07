@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  hello-world:
+    image: hello-world-maven
+    build: .
+    container_name: hello-world-mvn-container
+    ports:
+      - "8080:8080"
+    networks:
+      - hello-network
+
+networks:
+  hello-network:
+    driver: bridge
